@@ -6,13 +6,24 @@
 }
 
 body {
-  background-color: black;
+  background-color: rgb(27, 27, 27);
+  color: white;
+}
+
+.input-form {
+  color:white;
+  font-size: 200%;
+  padding-left: 2%
 }
 
 #make-heatmap-btn,
 #get-zipcode-data-btn {
-  background-color: var(--main-theme-color);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1cm;
+  border-color: rgb(255, 80, 80);
+  border-width:10pt;
   color: rgb(7, 0, 0);
+  font-size: 90%;
 }
 #chemical-name-selector:hover,
 #chemical-year-selector:hover,
