@@ -20,7 +20,7 @@ body {
 #get-zipcode-data-btn {
   background-color: rgb(255, 255, 255);
   box-shadow: 1cm;
-  border-color: rgb(255, 80, 80);
+  border-color: rgb(252, 172, 0);
   border-width:10pt;
   color: rgb(7, 0, 0);
   font-size: 90%;
@@ -56,5 +56,15 @@ header a.button {
 }
 #infobox {
   border-radius: 0.125rem; /* matches mini.css's --universal-border-radius variable */
+}
+
+#results {
+  float: right;
+  padding-right: 10%;
+}
+
+#results a {
+  color: rgb(252, 172, 0);
+  font-size: 200%;
 }
   
