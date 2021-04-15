@@ -1,0 +1,198 @@
+{
+    "Alabama": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Alaska": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Arizona": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Arkansas": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "California": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Colorado": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Connecticut": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Delaware": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Florida": {
+        "OpenToAll": true,
+        "MinAge": 18
+    },
+    "Georgia": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Hawaii": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Idaho": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Illinois": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Indiana": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Iowa": {
+        "OpenToAll": true,
+        "MinAge": 16,
+    },
+    "Kansas": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Kentucky": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Louisiana": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Maine": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Maryland": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Massachusetts": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Michigan": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Minnesota": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Missouri": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Montana": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Nebraska": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Nevada": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "New Hampshire": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "New Jersey": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "New Mexico": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "New York": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "North Carolina": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "North Dakota": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Ohio": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Oklahoma": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Oregon": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Pennsylvania": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Rhode Island": {
+        "OpenToAll": true,
+        "MinAge": 40
+    },
+    "South Carolina": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "South Dakota": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Tennessee": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Texas": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Utah": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Vermont": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Virginia": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Washington": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "West Virginia": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Wisconsin": {
+        "OpenToAll": true,
+        "MinAge": 16
+    },
+    "Wyoming": {
+        "OpenToAll": true,
+        "MinAge": 16
+    }
+}
