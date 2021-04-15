@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- TODO: change title to better title lol-->
-    <title>COVID-19 Information</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="UTF-8" />
+<head>
+  <!-- TODO: change title to better title lol-->
+  <title>COVID-19 Information</title>
 
-    <!-- mini.css v1 (not v2), for making the styling and layout easy -->
-    <link rel="stylesheet" href="main/css/mini-default.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
 
-    <!-- Further css changes to customize look -->
-    <link rel="stylesheet" href="main/css/index.css" />
+  <!-- mini.css v1 (not v2), for making the styling and layout easy -->
+  <link rel="stylesheet" href="main/css/mini-default.min.css" />
 
-   
+  <!-- Further css changes to customize look -->
+  <link rel="stylesheet" href="main/css/index.css" />
 
-    <!-- Makes everything on website run, like linking dropdowns and buttons to heatmap/infobox/zipcode modal  -->
-    <script src="main/js/index.js" type="module" async defer></script>
-  </head>
 
-  <body>
-    
-    <header>
-      <!--
+
+  <!-- Makes everything on website run, like linking dropdowns and buttons to heatmap/infobox/zipcode modal  -->
+  <script src="main/main/js/index.js" type="module" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <!--
       <a href="about/about.html" class="button">[About]</a>
       <a href="https://dhanujg.github.io/" class="button">[Website]</a>
       -->
-      <a href="#" class="logo">COVID-19 INFORMATION</a>
-    </header>
+    <a href="#" class="logo">COVID-19 INFORMATION</a>
+  </header>
 
-    <br>
-    <div id="results"></div>
+  <br>
+  <div id = "app">
+
+
+    <div id="results">
+      <div v-if="haveState">
+        <p>{{covidData.state}}'s current COVID status:</p>
+        <p>Yesterday's New Cases: {{covidData.todayCases}}</p>
+        <p>Yesterday's Deaths: {{covidData.todayDeaths}}</p>
+        <p>Current Active Cases: {{covidData.active}}</p>
+      </div>
+    </div>
     <div class="input-form">
       What is your age?
       <div class="card">
@@ -78,7 +91,7 @@
       <br>
       Where do you live?
       <div class="card">
-        <select>
+        <select v-on:change = "handleChange">
           <option selected disabled>STATE</option>
           <option>ALABAMA</option>
           <option>ALASKA</option>
@@ -141,18 +154,18 @@
         </select>
       </div>
       <br>
-      <button onclick="show_results();" id="make-heatmap-btn">
+      <button v-on:click= "getData" id="make-heatmap-btn">
         CLICK HERE TO FIND INFORMATION
-      </button> 
+      </button>
     </div>
-    
+
     <!--
     <main class="container">
       <div class="row">
         <div id="left-column" class="col-sm-12 col-md-4">
           <div id="controls">-->
-            <!-- Chemical Name/Year Selector and Make Heatmap Button -->
-            <!--
+    <!-- Chemical Name/Year Selector and Make Heatmap Button -->
+    <!--
             <div class="card">
               <div class="input-group vertical section dark">
                 <label for="chemical-name-selector">Choose your age:</label>
@@ -170,15 +183,15 @@
               </div>
             </div>
           -->
-            <!-- Get Zipcode Data Stuff -->
-            <!--
+    <!-- Get Zipcode Data Stuff -->
+    <!--
             <div class="card">
               <div class="input-group section dark">
                 <label for="zipcode-input">Get data for your zipcode:</label>
                 <input type="number" name="zipcode-input" id="zipcode-input" />
               -->
-                <!-- This stuff below is used to trigger a modal dialog: https://minicss.org/docs#modal-dialogs -->
-                <!--
+    <!-- This stuff below is used to trigger a modal dialog: https://minicss.org/docs#modal-dialogs -->
+    <!--
                 <label
                   for="modal-control"
                   id="get-zipcode-data-btn"
@@ -197,17 +210,17 @@
           </div>
         </div>
       -->
-        <!-- On small screens, heatmap will take up the entire screen width below the controls/infobox -->
-        <!-- On medium and large screens, heatmap will take up the right 8/12 of the page, with controls and infobox taking up 4/12 of the page on the left -->
-        <!-- <div id="right-column" class="col-sm-12 col-md-8">
+    <!-- On small screens, heatmap will take up the entire screen width below the controls/infobox -->
+    <!-- On medium and large screens, heatmap will take up the right 8/12 of the page, with controls and infobox taking up 4/12 of the page on the left -->
+    <!-- <div id="right-column" class="col-sm-12 col-md-8">
           <div id="loading-spinner"></div>
           <div id="heatmap"></div>
         </div>
       </div>
     -->
 
-      <!-- Info Box -->
-      <!--
+    <!-- Info Box -->
+    <!--
       <div class="row cols-sm-12">
         <div id="infobox-container" class="card">
           <div id="infobox" class="section dark double-padded"></div>
@@ -215,16 +228,8 @@
       </div>
     </main>
   -->
-  <script>
-    function show_results() {
-      document.getElementById("results").innerHTML = 
-      "<a href='https://www.michigan.gov/Coronavirus'>Coronavirus in Michigan</a><br><br>" +
-      "<a href='https://www.michigan.gov/coronavirus/0,9753,7-406-98163_98173---,00.html'>COVID-19 Cases by Michigan County</a><br><br>" +
-      "<a href='https://www.michigan.gov/coronavirus/0,9753,7-406-98178_103214_104822---,00.html'>Michigan Vaccination Locations</a><br><br>" +
-      "<a href='https://detroitmi.gov/departments/detroit-health-department/programs-and-services/communicable-disease/coronavirus-covid-19'>" +
-        "COVID-19 in Detroit</a><br><br>" +
-      "<a href='https://www.cdc.gov/aging/covid19-guidance.html'>COVID-19 Guidance for Older Adults</a>";
-    }
-  </script>
-  </body>
+  </div>
+  <script src="main/js/mock-backend.js"></script>
+</body>
+
 </html>
