@@ -63,6 +63,11 @@ header a.button {
   padding-right: 10%;
 }
 
+#results p{
+  color: yellow;
+  font-size: 200%;
+}
+
 #results a {
   color: rgb(252, 172, 0);
   font-size: 150%;
