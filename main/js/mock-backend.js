@@ -57,6 +57,9 @@ let app = new Vue({
         handleChange(e) {
             this.state = e.target.value;
         },
+        handleImmuneChange(e) {
+            this.immune_status = e.target.value;
+        }
         getData() {
             var callstring = 'https://disease.sh/v3/covid-19/states/' + this.state + '?yesterday=true';
             this.haveState = false;
