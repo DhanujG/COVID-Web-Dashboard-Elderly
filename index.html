@@ -38,10 +38,14 @@
 
     <div id="results">
       <div v-if="haveState">
-        <p>{{covidData.state}}'s current COVID status:</p>
+        <p style="font-weight:bolder">{{covidData.state}}'s current COVID status:</p>
         <p>Yesterday's New Cases: {{covidData.todayCases}}</p>
         <p>Yesterday's Deaths: {{covidData.todayDeaths}}</p>
         <p>Current Active Cases: {{covidData.active}}</p>
+        <br>
+        <p style="font-weight:bold">Additional Resources:</p>
+      </div>
+      <div id="results-links">
       </div>
     </div>
     <div class="input-form">
@@ -91,7 +95,7 @@
       <br>
       Where do you live?
       <div class="card">
-        <select v-on:change = "handleChange">
+        <select id="state" v-on:change = "handleChange">
           <option selected disabled>STATE</option>
           <option>ALABAMA</option>
           <option>ALASKA</option>
@@ -148,7 +152,7 @@
       Are you immunocompromised?
       <div class="card">
         <select>
-          <option selected disabled>---</option>
+          <option selected disabled v-on:change = "handleImmuneChange">---</option>
           <option>YES</option>
           <option>NO</option>
         </select>
