@@ -44,7 +44,6 @@ function show_results() {
             break;
     } 
 
-    var compromised = document.getElementById("compromised");
     if (this.compromised.value == "YES") {
 
 

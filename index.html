@@ -39,9 +39,9 @@
     <div id="results">
       <div v-if="haveState">
         <p style="font-weight:bolder; color:yellowgreen">{{covidData.state}}'s current COVID status:</p>
-        <p>Today's New Cases: {{covidDataToday.todayCases}} <img v-if="covidDataToday.todayCases > covidData.todayCases" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Green-Up-Arrow.svg/1077px-Green-Up-Arrow.svg.png"> <img v-else src="https://www.iconsdb.com/icons/preview/red/down-xxl.png"></p>
-        <p>Today's Deaths: {{covidDataToday.todayDeaths}} <img v-if="covidDataToday.todayCases > covidData.todayCases" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Green-Up-Arrow.svg/1077px-Green-Up-Arrow.svg.png"> <img v-else src="https://www.iconsdb.com/icons/preview/red/down-xxl.png"></p>
-        <p>Current Active Cases: {{covidDataToday.active}} <img v-if="covidDataToday.todayCases > covidData.todayCases" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Green-Up-Arrow.svg/1077px-Green-Up-Arrow.svg.png"> <img v-else src="https://www.iconsdb.com/icons/preview/red/down-xxl.png"></p>
+        <p>Today's New Cases: {{covidDataToday.todayCases}} <img v-if="covidDataToday.todayCases > covidData.todayCases" src="/main/images/up-xxl.png"> <img v-else src="/main/images/Green-down-Arrow.svg.png"></p>
+        <p>Today's Deaths: {{covidDataToday.todayDeaths}} <img v-if="covidDataToday.todayCases > covidData.todayCases" src="/main/images/up-xxl.png"> <img v-else src="/main/images/Green-down-Arrow.svg.png"></p>
+        <p>Current Active Cases: {{covidDataToday.active}} <img v-if="covidDataToday.todayCases > covidData.todayCases" src="/main/images/up-xxl.png"> <img v-else src="/main/images/Green-down-Arrow.svg.png"></p>
         <br>
         <hr>
         <p style="font-weight:bold; color:yellowgreen">Additional Resources:</p>
@@ -166,75 +166,7 @@
       </button>
     </div>
 
-    <!--
-    <main class="container">
-      <div class="row">
-        <div id="left-column" class="col-sm-12 col-md-4">
-          <div id="controls">-->
-    <!-- Chemical Name/Year Selector and Make Heatmap Button -->
-    <!--
-            <div class="card">
-              <div class="input-group vertical section dark">
-                <label for="chemical-name-selector">Choose your age:</label>
-                <select
-                  name="chemical-name-selector"
-                  id="chemical-name-selector"
-                >
-                  <option selected disabled>---</option>
-                  <option></option>
-                </select>
-
-                <button id="make-heatmap-btn" class="">
-                  Make Heatmap!
-                </button>
-              </div>
-            </div>
-          -->
-    <!-- Get Zipcode Data Stuff -->
-    <!--
-            <div class="card">
-              <div class="input-group section dark">
-                <label for="zipcode-input">Get data for your zipcode:</label>
-                <input type="number" name="zipcode-input" id="zipcode-input" />
-              -->
-    <!-- This stuff below is used to trigger a modal dialog: https://minicss.org/docs#modal-dialogs -->
-    <!--
-                <label
-                  for="modal-control"
-                  id="get-zipcode-data-btn"
-                  class="button"
-                  >Go!</label
-                >
-                <input type="checkbox" id="modal-control" class="modal" />
-                <div>
-                  <div class="card">
-                    <label for="modal-control" class="modal-close"></label>
-                    <div id="zipcode-modal-body" class="section"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      -->
-    <!-- On small screens, heatmap will take up the entire screen width below the controls/infobox -->
-    <!-- On medium and large screens, heatmap will take up the right 8/12 of the page, with controls and infobox taking up 4/12 of the page on the left -->
-    <!-- <div id="right-column" class="col-sm-12 col-md-8">
-          <div id="loading-spinner"></div>
-          <div id="heatmap"></div>
-        </div>
-      </div>
-    -->
-
-    <!-- Info Box -->
-    <!--
-      <div class="row cols-sm-12">
-        <div id="infobox-container" class="card">
-          <div id="infobox" class="section dark double-padded"></div>
-        </div>
-      </div>
-    </main>
-  -->
+    
   </div>
   <script src="main/js/mock-backend.js"></script>
 </body>
