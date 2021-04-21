@@ -20,7 +20,7 @@ body {
 #get-zipcode-data-btn {
   background-color: rgb(255, 255, 255);
   box-shadow: 1cm;
-  border-color: rgb(252, 172, 0);
+  border-color: yellowgreen;
   border-width:10pt;
   color: rgb(7, 0, 0);
   font-size: 90%;
@@ -64,7 +64,7 @@ header a.button {
 }
 
 #results p{
-  color: yellow;
+  color: rgb(255, 255, 255);
   font-size: 200%;
 }
 
@@ -75,4 +75,9 @@ header a.button {
 
 #results p {
   font-size: 200%;
+}
+
+#results img {
+  width: 2.5%;
+  height: auto;
 }

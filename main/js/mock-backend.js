@@ -42,6 +42,34 @@ function show_results() {
             "<a href='https://www.phillymag.com/news/covid-19-vaccines-philadelphia-guide/'>Philadelphia Vaccination Sites</a><br><br>" +
             "<a href='https://www.mayoclinic.org/coronavirus-covid-19/map/pennsylvania'>COVID-19 Tracking by PA County</a><br><br>";
             break;
+    } 
+
+    var compromised = document.getElementById("compromised");
+    if (this.compromised.value == "YES") {
+
+
+        document.getElementById("results-links").innerHTML +=
+            "<br>"+
+            "<a href='https://www.health.pa.gov/topics/disease/coronavirus/Vaccine/Pages/Vaccine.aspx'> Pennsylvania Phase 1B Immunocompromised Vaccine Eligibility </a><br><br>" +
+            "<a href='https://www.cdc.gov/coronavirus/2019-ncov/need-extra-precautions/people-with-medical-conditions.html'> Latest Immunocompromised CDC COVID Safety Instructions </a><br><br>" +
+            "<a href='https://www.uchicagomedicine.org/forefront/coronavirus-disease-covid-19/immunocompromised-patients-covid-19-vaccines'> Immunocompromomised Patient Information Regarding Different COVID Vaccines </a><br><br>";
+    
+
+
+    }
+}
+
+function validate() {
+    
+    var state = document.getElementById("state");
+    
+    var compromised = document.getElementById("compromised");
+    
+    if (state.value == "STATE" || compromised.value == "---") {
+        return false;
+    }
+    else {
+        return true;
     }
 }
 
@@ -51,6 +79,8 @@ let app = new Vue({
         state: "",
         age: "",
         covidData: {},
+        covidDataToday:{},
+        immune_status:"",
         haveState: false
     },
     methods: {
@@ -60,21 +90,47 @@ let app = new Vue({
         handleImmuneChange(e) {
             this.immune_status = e.target.value;
         },
-        getData() {
-            var callstring = 'https://disease.sh/v3/covid-19/states/' + this.state + '?yesterday=true';
-            this.haveState = false;
-            axios.get(callstring).then(response => {
+        async getData() {
+            var haveInputs = validate();
+            if(haveInputs){
+                var callstringYesterday = 'https://disease.sh/v3/covid-19/states/' + this.state + '?yesterday=true';
+                var callstringToday = 'https://disease.sh/v3/covid-19/states/' + this.state + '?yesterday=false';
+
+                const [yesterdayResponse,todayResponse] = await Promise.all([axios.get(callstringYesterday),axios.get(callstringToday)]);
+
+                this.covidData = yesterdayResponse.data;
+                this.covidDataToday= todayResponse.data;
+                this.haveState = true;
+                this.$nextTick(function(){
+                    show_results();
+                    console.log(this.covidDataToday)
+                });
+            }
+            else {
+                alert("Please enter valid input!")
+            }
+            
+            
+            /*axios.get(callstringYesterday).then(response => {
                 this.covidData = response.data;
                 this.haveState = true;
                 this.$nextTick(function(){
                     show_results();
                     console.log(this.covidData)
-                })
+                });
                
                 
             }).catch(error => {
                 console.log(error);
             });
+
+            axios.get(callstringToday).then(respon)e => {
+                this.covidDataToday = response.data;
+                console.log(covidDataToday);
+            };.catch(error => {
+                console.log(error)
+            })*/
+
         }
     }
 })

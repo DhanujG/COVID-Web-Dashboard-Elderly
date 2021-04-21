@@ -38,20 +38,22 @@
 
     <div id="results">
       <div v-if="haveState">
-        <p style="font-weight:bolder">{{covidData.state}}'s current COVID status:</p>
-        <p>Yesterday's New Cases: {{covidData.todayCases}}</p>
-        <p>Yesterday's Deaths: {{covidData.todayDeaths}}</p>
-        <p>Current Active Cases: {{covidData.active}}</p>
+        <p style="font-weight:bolder; color:yellowgreen">{{covidData.state}}'s current COVID status:</p>
+        <p>Today's New Cases: {{covidDataToday.todayCases}} <img v-if="covidDataToday.todayCases > covidData.todayCases" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Green-Up-Arrow.svg/1077px-Green-Up-Arrow.svg.png"> <img v-else src="https://www.iconsdb.com/icons/preview/red/down-xxl.png"></p>
+        <p>Today's Deaths: {{covidDataToday.todayDeaths}} <img v-if="covidDataToday.todayCases > covidData.todayCases" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Green-Up-Arrow.svg/1077px-Green-Up-Arrow.svg.png"> <img v-else src="https://www.iconsdb.com/icons/preview/red/down-xxl.png"></p>
+        <p>Current Active Cases: {{covidDataToday.active}} <img v-if="covidDataToday.todayCases > covidData.todayCases" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Green-Up-Arrow.svg/1077px-Green-Up-Arrow.svg.png"> <img v-else src="https://www.iconsdb.com/icons/preview/red/down-xxl.png"></p>
         <br>
-        <p style="font-weight:bold">Additional Resources:</p>
+        <hr>
+        <p style="font-weight:bold; color:yellowgreen">Additional Resources:</p>
       </div>
       <div id="results-links">
       </div>
     </div>
     <div class="input-form">
+      <!--
       What is your age?
       <div class="card">
-        <select>
+        <select id = "age">
           <option selected disabled>AGE</option>
           <option>64 or younger</option>
           <option>65</option>
@@ -92,6 +94,7 @@
           <option>100+</option>
         </select>
       </div>
+    -->
       <br>
       Where do you live?
       <div class="card">
@@ -151,8 +154,8 @@
       <br>
       Are you immunocompromised?
       <div class="card">
-        <select>
-          <option selected disabled v-on:change = "handleImmuneChange">---</option>
+        <select id = "compromised" v-on:change = "handleImmuneChange">
+          <option selected disabled>---</option>
           <option>YES</option>
           <option>NO</option>
         </select>
